@@ -1,5 +1,5 @@
 import {createStore} from "redux";
-import {createAction, createReducer} from "@reduxjs/toolkit";
+import {configureStore, createAction, createReducer} from "@reduxjs/toolkit";
 
 const addTodo = createAction("ADD");
 const deleteTodo = createAction("DELETE");
@@ -24,7 +24,7 @@ const reducer = createReducer([], {
   }
 });
 
-const store = createStore(reducer);
+const store = configureStore({reducer});
 
 export const actionCreators = {
   addTodo,
